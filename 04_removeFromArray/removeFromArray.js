@@ -10,16 +10,18 @@ const removeFromArray = function(arr, ...rem) {
             }
         }
 
-    //removing null
+    return nullRemover(newArray);
+};
+
+function nullRemover(arr){
     let withoutNull = [];
-    newArray.forEach(elem => {
+    arr.forEach(elem => {
         if(elem != null){
             withoutNull.push(elem);
         }
     });
-
     return withoutNull;
-};
+}
 
 // Do not edit below this line
 module.exports = removeFromArray;
