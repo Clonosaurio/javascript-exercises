@@ -1,7 +1,7 @@
 const sumAll = function(start, finish) {
     let sum = 0;
     
-    if(!(isValidNumber(start, finish))){
+    if(isInvalidNumber(start, finish)){
         return "ERROR";
     }else if(start < finish){
         for(let i = start; i <= finish; i++){
@@ -16,14 +16,14 @@ const sumAll = function(start, finish) {
     return sum;
 };
 
-function isValidNumber(...num){
-    let valid = true;
+function isInvalidNumber(...num){
+    let invalid = false;
     num.forEach(n => {
         if(n < 0 || typeof(n) != "number"){
-            valid = false;
+            invalid = true;
         }
     });
-    return valid;
+    return invalid;
 }
 
 // Do not edit below this line
