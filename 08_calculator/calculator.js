@@ -10,7 +10,7 @@ const subtract = function(n1, ...n2) {
   return total;
 };
 
-const sum = function(arr) {
+const sum = function(arr) { //arr.reduce() was better
   if(arr.length == 0) {
     return 0;
     }
@@ -19,26 +19,32 @@ const sum = function(arr) {
   return total;  
 };
 
-const multiply = function(arr) {
+const multiply = function(arr) { //arr.reduce() was better
   let total = 1;
   arr.map(n => total *= n);
   return total;
+
+  /* //from "solution" branch:
+  return array.length
+  ? array.reduce((accumulator, nextItem) => accumulator * nextItem)
+  : 0;
+  */
+
 };
 
 const power = function(n, p) {
-	// return n**p;
+	//easy solution:
+  //return n**p;
+  //from "solution" branch:
+  //return Math.pow(a, b);
   total = n;
-  for (let i = 1; i < p; i++) {
-    total = total * n;
-  }
+  for (let i = 1; i < p; i++) total = total * n;
   return total;
 };
 
 const factorial = function(n) {
   total = 1;
-  for(let i = 1; i <= n; i++){
-    total *= i;
-  }
+  for(let i = 1; i <= n; i++) total *= i;
   return total;
 };
 
